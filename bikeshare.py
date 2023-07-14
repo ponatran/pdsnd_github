@@ -29,7 +29,8 @@ def get_filters():
         month = input("For what month? Choose from January to June numerically (1 = January) For all months, type 'all': ")
         month = str(month)
         #check if month is valid:
-        if month in ('1','2', '3', '4', '5', '6', 'all'):
+        valid_months = ['1','2', '3', '4', '5', '6', 'all']
+        if month in valid_months:
             break
         else:
             print("Invalid month. Please try again.")
@@ -38,7 +39,8 @@ def get_filters():
         day = input("For what day of the week? (0 = Monday, 6 = Sunday). For all days of the week, type 'all': ")
         day = str(day)
         #check if day is valid:
-        if day in ('0','1','2','3','4','5','6','all'):
+        valid_days = ['0','1','2','3','4','5','6','all']
+        if day in valid_days:
             break
         else:
             print("Invalid day of the week. Please try again.")
