@@ -16,7 +16,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello! Let\'s explore some U.S. bikeshare data!')
     # Get user input for city (chicago, new york city, washington) and deal with invalid inputs
     while True:
         city = input("What city's data would you like to explore? (Chicago, New York City, or Washington): ").lower()
@@ -234,7 +234,7 @@ def main():
             elif restart not in ('yes', 'no'):
                 print('Invalid input. Please try again')
             elif restart.lower() == 'no':
-                print('The program will now exit. Thanks for exploring US bikeshare data!')
+                print('The program will now exit. Thanks for exploring U.S. bikeshare data!')
                 sys.exit()
 
 if __name__ == "__main__":
