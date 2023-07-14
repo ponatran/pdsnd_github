@@ -30,7 +30,8 @@ def get_filters():
         month = input("For what month? Choose from January to June numerically (1 = January) For all months, type 'all': ")
         month = str(month)
         #check if month is valid:
-        if month in ('1','2', '3', '4', '5', '6', 'all'):
+        valid_months = ['1','2', '3', '4', '5', '6', 'all']
+        if month in valid_months:
             break
         else:
             print("Invalid month. Please try again.")
@@ -39,7 +40,8 @@ def get_filters():
         day = input("For what day of the week? (0 = Monday, 6 = Sunday). For all days of the week, type 'all': ")
         day = str(day)
         #check if day is valid:
-        if day in ('0','1','2','3','4','5','6','all'):
+        valid_days = ['0','1','2','3','4','5','6','all']
+        if day in valid_days:
             break
         else:
             print("Invalid day of the week. Please try again.")
@@ -94,17 +96,17 @@ def time_stats(df):
 
     # Display the most common month
     common_month = df['month'].mode()[0]
-    print('Most common/chosen month: ', common_month)
+    print('Most common/chosen month: {}',.format(common_month))
 
     # Display the most common day of week
     common_day = df['day'].mode()[0]
-    print('Most common/chosen day of week: ', common_day)
+    print('Most common/chosen day of week: {}',.format(common_day))
 
     # Convert to datetime and display the most common start hour
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
     common_hour = df['hour'].mode()[0]
-    print('Most common start hour: ', common_hour)
+    print('Most common start hour: {}',.format(common_hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
